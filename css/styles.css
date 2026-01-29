@@ -163,15 +163,19 @@ main section li {
 /* Container for charts and images */
 .viz-container {
     margin: 2rem 0;
-    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    text-align: left;
 }
 
 .viz-container img {
-    max-width: 100%;           /* Responsive: never wider than container */
-    height: auto;              /* Maintain aspect ratio */
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+    flex: 0 0 auto;
 }
 
 /* Figure captions */
@@ -179,7 +183,7 @@ main section li {
     font-style: italic;
     color: var(--text-secondary);
     font-size: 0.9rem;
-    margin-top: 0.5rem;
+    margin-top: 0;
 }
 
 /* Grid layout for multiple visualizations */
