@@ -180,7 +180,7 @@ main section li {
 
 /* Figure captions */
 .viz-container figcaption {
-    font-style: normal;
+    font-style: italic;
     color: var(--text-secondary);
     font-size: 0.9rem;
     margin-top: 0;
