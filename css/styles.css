@@ -428,3 +428,10 @@ footer a:hover {
         page-break-inside: avoid;
     }
 }
+
+
+
+.tableauPlaceholder {
+    width: 300%; /* or a specific width */
+    height: 600px; /* Adjust as needed */
+}
