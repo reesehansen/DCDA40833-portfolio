@@ -307,6 +307,19 @@ main section li {
     margin: 2rem 0;
 }
 
+/* Centered image container - for lab pages with screenshots */
+.viz-container.centered {
+    justify-content: center;
+    text-align: center;
+}
+
+.viz-container.centered img {
+    max-width: 600px;
+    width: 400%;
+}
+
+/* the AI changed my settings for my images within the labs to center them and also altered the image size for lab05.  */
+
 /* =========================
    Code Blocks
    ========================= */
