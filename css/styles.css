@@ -22,6 +22,29 @@
     --white: #ffffff;
 }
 
+/* =========================
+   Dark Mode Variables
+   ========================= */
+[data-theme="dark"] {
+    --primary-color: #5a9cf5;
+    /* Lighter blue for dark mode */
+    --secondary-color: #e8a4dd;
+    /* Lighter pink for dark mode */
+    --accent-color: #ffd700;
+    /* Gold stays the same */
+    --text-color: #e4e4e4;
+    /* Light text */
+    --text-secondary: #a0aec0;
+    /* Lighter gray for captions */
+    --bg-color: #1a1a2e;
+    /* Dark background */
+    --white: #16213e;
+    /* Dark card background */
+    --nav-bg: #0f0f23;
+    /* Darker nav for dark mode */
+}
+
+/* AI added the Dark Mode Variables section which indicates the changes from the original colors to compliment a darker appearence. AI wrote this put I understand it. The changes in color have lightened the text colors and darkened the background colors.  */
 
 /* I chose blue and pink as my mine colors because they are fun and compliment themselves  */
 
@@ -80,6 +103,7 @@ nav {
     /* Make nav a flex container */
     justify-content: center;
     /* Center the ul inside nav */
+    align-items: center;
     position: sticky;
     /* Stick to top when scrolling */
     top: 0;
@@ -498,6 +522,23 @@ footer a:hover {
         display: block;
     }
 
+    /* Keep theme toggle visible on mobile, but smaller */
+    .theme-toggle {
+        position: absolute;
+        left: 0.5rem;
+        padding: 0.15rem 0.4rem;
+        font-size: 0.65rem;
+        border-radius: 10px;
+    }
+
+    .theme-toggle .icon {
+        font-size: 0.75rem;
+    }
+
+    /* the AI edited the Theme toggle size and its icon size. I did not write this code but i understand it. The AI simply made the margins smaller dimensions to decrease the size of the toggle.  */
+
+
+
     /* Hide nav links inside the bar — they live in the drawer instead */
     nav ul,
     nav>a {
@@ -527,4 +568,102 @@ footer a:hover {
         box-shadow: none;
         page-break-inside: avoid;
     }
+}
+
+/* =========================
+   Dark Mode Toggle Button
+   ========================= */
+.theme-toggle {
+    background: none;
+    border: 1px solid white;
+    border-radius: 12px;
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 0.75rem;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.theme-toggle .icon {
+    font-size: 0.85rem;
+}
+
+/* Dark Mode Specific Overrides */
+[data-theme="dark"] body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] header {
+    background-color: #0f3460;
+}
+
+[data-theme="dark"] nav {
+    background-color: #0f0f23;
+}
+
+[data-theme="dark"] main section {
+    background-color: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .portfolio-card {
+    background: var(--white);
+    border-color: #2d3748;
+}
+
+[data-theme="dark"] .portfolio-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 16px rgba(90, 156, 245, 0.2);
+}
+
+[data-theme="dark"] pre {
+    background: #1e1e1e;
+}
+
+[data-theme="dark"] p code,
+[data-theme="dark"] li code {
+    background: #2d3748;
+    color: #f687b3;
+}
+
+[data-theme="dark"] table {
+    background: var(--white);
+}
+
+[data-theme="dark"] th {
+    background: #0f3460;
+}
+
+[data-theme="dark"] td {
+    border-color: #2d3748;
+}
+
+[data-theme="dark"] tr:nth-child(even) {
+    background: #1a1a2e;
+}
+
+[data-theme="dark"] footer {
+    background-color: #0f0f23;
+}
+
+[data-theme="dark"] .framework-callout {
+    background: linear-gradient(135deg, #2d3748, #1a1a2e);
+}
+
+[data-theme="dark"] .nav-drawer {
+    background-color: #0f0f23;
+}
+
+[data-theme="dark"] .viz-container img {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }

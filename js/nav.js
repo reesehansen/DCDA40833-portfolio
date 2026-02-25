@@ -52,3 +52,56 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', closeMenu);
     });
 });
+
+/* =========================
+   Dark Mode Toggle
+   Vanilla JS — persists preference in localStorage
+   ========================= */
+document.addEventListener('DOMContentLoaded', function () {
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (!themeToggle) return;
+
+    const sunIcon = '☀️';
+    const moonIcon = '🌙';
+
+    /* Check for saved theme preference or default to light */
+    function getPreferredTheme() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            return savedTheme;
+        }
+        /* Check system preference */
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    /* Apply theme to document */
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        updateToggleButton(theme);
+    }
+
+    /* Update the toggle button icon and text */
+    function updateToggleButton(theme) {
+        const icon = themeToggle.querySelector('.icon');
+        const text = themeToggle.querySelector('.text');
+        if (theme === 'dark') {
+            if (icon) icon.textContent = sunIcon;
+            if (text) text.textContent = 'Light';
+        } else {
+            if (icon) icon.textContent = moonIcon;
+            if (text) text.textContent = 'Dark';
+        }
+    }
+
+    /* Initialize theme on page load */
+    const currentTheme = getPreferredTheme();
+    applyTheme(currentTheme);
+
+    /* Toggle theme on button click */
+    themeToggle.addEventListener('click', function () {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
+        applyTheme(newTheme);
+    });
+});
