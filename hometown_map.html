@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_76d9a53c82651f1604aa6e3c13c801de {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; bottom: 50px; left: 50px; z-index: 1000; background-color: white; 
+                padding: 10px; border-radius: 5px; border: 2px solid gray; font-size: 12px;">
+        <strong>Location Types</strong><br>
+        <i class="fa fa-cutlery" style="color: red;"></i> Restaurant<br>
+        <i class="fa fa-coffee" style="color: orange;"></i> Cafe<br>
+        <i class="fa fa-tree" style="color: green;"></i> Activity/Park<br>
+        <i class="fa fa-graduation-cap" style="color: blue;"></i> School
+    </div>
+    
+    
+            <div class="folium-map" id="map_76d9a53c82651f1604aa6e3c13c801de" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_76d9a53c82651f1604aa6e3c13c801de = L.map(
+                "map_76d9a53c82651f1604aa6e3c13c801de",
+                {
+                    center: [37.87897223076923, -122.1749006923077],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 14,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5dfd3abbf81df2cca7a74443429e0289 = L.tileLayer(
+                "https://api.mapbox.com/styles/v1/reeselhansen/cmm11hknz002f01s5cdsr0q2f/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoicmVlc2VsaGFuc2VuIiwiYSI6ImNtbHR4MWtoYjA1NmwzZG9tcms0NjY2dzgifQ.5-nQCNIzKfjduK9YRduXjw",
+                {"attribution": "Mapbox", "detectRetina": false, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_5dfd3abbf81df2cca7a74443429e0289.addTo(map_76d9a53c82651f1604aa6e3c13c801de);
+        
+    
+            var marker_a61d4f9401cb51a5dfe54412cb38196d = L.marker(
+                [37.878505, -122.182275],
+                {}
+            ).addTo(map_76d9a53c82651f1604aa6e3c13c801de);
+        
+    
+            var icon_fdf68060333073748c08de654636eb93 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_a61d4f9401cb51a5dfe54412cb38196d.setIcon(icon_fdf68060333073748c08de654636eb93);
+        
+    
+        var popup_a2aa9bf47ece65a6761744fabff2edf7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bdb5ff9361f6cd3fe800f7fdc0a3f484 = $(`<div id="html_bdb5ff9361f6cd3fe800f7fdc0a3f484" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">             <h4 style="margin: 0 0 8px 0;">The Fourth Bore Taproom & Grill</h4>             <img src="https://www.indieonthemove.com/resize/images/users/7a572aea-6823-4da2-b4c4-d0956c5b86f2/gDaqVmp5Hx9l9GaiJOkan7S0GyyBu7wolPlduEBQ.jpg" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;">             <p style="font-size: 12px; margin: 4px 0;"><strong>Type:</strong> Restaurant</p>             <p style="font-size: 12px; margin: 4px 0;"><strong>Address:</strong> 2 Orinda Theatre Square Suite 134, Orinda, CA 94563</p>             <p style="font-size: 11px; margin: 4px 0;">A small neighborhood café and restaurant in Orinda Theatre Square known for coffee, breakfast items, sandwiches, and a casual place to meet or work.</p>         </div>         </div>`)[0];
+                popup_a2aa9bf47ece65a6761744fabff2edf7.setContent(html_bdb5ff9361f6cd3fe800f7fdc0a3f484);
+            
+        
+
+        marker_a61d4f9401cb51a5dfe54412cb38196d.bindPopup(popup_a2aa9bf47ece65a6761744fabff2edf7)
+        ;
+
+        
+    
+    
+            marker_a61d4f9401cb51a5dfe54412cb38196d.bindTooltip(
+                `<div>
+                     The Fourth Bore Taproom & Grill
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5e58059915a2f8dda099a04575fe1e0a = L.marker(
+                [37.87825, -122.181552],
+                {}
+            ).addTo(map_76d9a53c82651f1604aa6e3c13c801de);
+        
+    
+            var icon_6e6cc2fc6e7bb8bce72a89486b143103 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_5e58059915a2f8dda099a04575fe1e0a.setIcon(icon_6e6cc2fc6e7bb8bce72a89486b143103);
+        
+    
+        var popup_62c32fd37d4509a2980a84a38e9a45fc = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f61410fd8449104d66e46242b8de4e82 = $(`<div id="html_f61410fd8449104d66e46242b8de4e82" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">             <h4 style="margin: 0 0 8px 0;">Loard's Ice Cream & Candies</h4>             <img src="https://s3-media0.fl.yelpcdn.com/bphoto/gV1PjqHeoWpKtgQc00aqqg/348s.jpg" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;">             <p style="font-size: 12px; margin: 4px 0;"><strong>Type:</strong> Restaurant</p>             <p style="font-size: 12px; margin: 4px 0;"><strong>Address:</strong> 230 Brookwood Rd, Orinda, CA 94563</p>             <p style="font-size: 11px; margin: 4px 0;">A long-standing local ice cream and burger spot in Orinda that serves classic American comfort food like milkshakes, fries, and sundaes.</p>         </div>         </div>`)[0];
+                popup_62c32fd37d4509a2980a84a38e9a45fc.setContent(html_f61410fd8449104d66e46242b8de4e82);
+            
+        
+
+        marker_5e58059915a2f8dda099a04575fe1e0a.bindPopup(popup_62c32fd37d4509a2980a84a38e9a45fc)
+        ;
+
+        
+    
+    
+            marker_5e58059915a2f8dda099a04575fe1e0a.bindTooltip(
+                `<div>
+                     Loard's Ice Cream & Candies
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_78b3c56ee928cd5ac33bed11330af26f = L.marker(
+                [37.88422, -122.191865],
+                {}
+            ).addTo(map_76d9a53c82651f1604aa6e3c13c801de);
+        
+    
+            var icon_c7e845d5b02d0a0e7af19154f2cadca7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_78b3c56ee928cd5ac33bed11330af26f.setIcon(icon_c7e845d5b02d0a0e7af19154f2cadca7);
+        
+    
+        var popup_ba05f8324b030fe66fcee4bead78f0a6 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_df3db6f3be77b7a68b7f627be563ab95 = $(`<div id="html_df3db6f3be77b7a68b7f627be563ab95" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">             <h4 style="margin: 0 0 8px 0;">Starbucks</h4>             <img src="https://www.beyondthecreek.com/wp-content/uploads/2023/05/starbucks-orinda-theatre-square-closed.jpg" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;">             <p style="font-size: 12px; margin: 4px 0;"><strong>Type:</strong> Cafe</p>             <p style="font-size: 12px; margin: 4px 0;"><strong>Address:</strong> 1 Camino Sobrante, Orinda, CA 94563</p>             <p style="font-size: 11px; margin: 4px 0;">A popular coffee shop near downtown Orinda where people grab coffee, study, or meet with friends.</p>         </div>         </div>`)[0];
+                popup_ba05f8324b030fe66fcee4bead78f0a6.setContent(html_df3db6f3be77b7a68b7f627be563ab95);
+            
+        
+
+        marker_78b3c56ee928cd5ac33bed11330af26f.bindPopup(popup_ba05f8324b030fe66fcee4bead78f0a6)
+        ;
+
+        
+    
+    
+            marker_78b3c56ee928cd5ac33bed11330af26f.bindTooltip(
+                `<div>
+                     Starbucks
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1786b5625e0d06ce5db9a2c47bcc9293 = L.marker(
+                [37.86023, -122.126216],
+                {}
+            ).addTo(map_76d9a53c82651f1604aa6e3c13c801de);
+        
+    
+            var icon_2c6a16f4a226f13c75d7b04ca7113eca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_1786b5625e0d06ce5db9a2c47bcc9293.setIcon(icon_2c6a16f4a226f13c75d7b04ca7113eca);
+        
+    
+        var popup_e1e1e1324b79f6972cda6343857bb239 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_e69a1cca3e0de4a7915759c7605f1a8f = $(`<div id="html_e69a1cca3e0de4a7915759c7605f1a8f" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">             <h4 style="margin: 0 0 8px 0;">California Academy of Performing Arts</h4>             <img src="https://images.squarespace-cdn.com/content/v1/605f9448852996177d6c9859/1620360402595-JTIVG7HHMDAS0YJMV0AJ/capapics5.jpg?format=2500w" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;">             <p style="font-size: 12px; margin: 4px 0;"><strong>Type:</strong> Activity</p>             <p style="font-size: 12px; margin: 4px 0;"><strong>Address:</strong> 370 Park St Suite E, Moraga, CA 94556</p>             <p style="font-size: 11px; margin: 4px 0;">A performing arts school in nearby Moraga that offers classes in dance, music, and theater for students of various ages.</p>         </div>         </div>`)[0];
+                popup_e1e1e1324b79f6972cda6343857bb239.setContent(html_e69a1cca3e0de4a7915759c7605f1a8f);
+            
+        
+
+        marker_1786b5625e0d06ce5db9a2c47bcc9293.bindPopup(popup_e1e1e1324b79f6972cda6343857bb239)
+        ;
+
+        
+    
+    
+            marker_1786b5625e0d06ce5db9a2c47bcc9293.bindTooltip(
+                `<div>
+                     California Academy of Performing Arts
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_bc504de81923f00535c37c51830a98ca = L.marker(
+                [37.840537, -122.146185],
+                {}
+            ).addTo(map_76d9a53c82651f1604aa6e3c13c801de);
+        
+    
+            var icon_1a237309fdb08d1dd37a9254c5ce048a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "graduation-cap", "iconColor": "white", "markerColor": "blue", "prefix": "fa"}
+            );
+            marker_bc504de81923f00535c37c51830a98ca.setIcon(icon_1a237309fdb08d1dd37a9254c5ce048a);
+        
+    
+        var popup_98fb2c74606510bf2963975ad43cbdae = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f47d43988565ef86ad34cd8a2f9eafa9 = $(`<div id="html_f47d43988565ef86ad34cd8a2f9eafa9" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">             <h4 style="margin: 0 0 8px 0;">Miramonte High School</h4>             <img src="https://mhsmirador.com/wp-content/uploads/2017/06/content-1480425779-45-miramonte-high-school.jpg" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;">             <p style="font-size: 12px; margin: 4px 0;"><strong>Type:</strong> School</p>             <p style="font-size: 12px; margin: 4px 0;"><strong>Address:</strong> 750 Moraga Way, Orinda, CA 94563</p>             <p style="font-size: 11px; margin: 4px 0;">A public high school in Orinda known for its strong academics, athletics, and arts programs serving the Lamorinda community.</p>         </div>         </div>`)[0];
+                popup_98fb2c74606510bf2963975ad43cbdae.setContent(html_f47d43988565ef86ad34cd8a2f9eafa9);
+            
+        
+
+        marker_bc504de81923f00535c37c51830a98ca.bindPopup(popup_98fb2c74606510bf2963975ad43cbdae)
+        ;
+
+        
+    
+    
+            marker_bc504de81923f00535c37c51830a98ca.bindTooltip(
+                `<div>
+                     Miramonte High School
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b5a4474e886605c7ca6080a2efb9deb8 = L.marker(
+                [37.87854, -122.180943],
+                {}
+            ).addTo(map_76d9a53c82651f1604aa6e3c13c801de);
+        
+    
+            var icon_25c0f1b760c4a20a0866fd058612dea6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "coffee", "iconColor": "white", "markerColor": "orange", "prefix": "fa"}
+            );
+            marker_b5a4474e886605c7ca6080a2efb9deb8.setIcon(icon_25c0f1b760c4a20a0866fd058612dea6);
+        
+    
+        var popup_dd92e5f29b4946cc7a427ed1b237138a = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_7d29b88dd9a4864d8115a4c16cc59bcd = $(`<div id="html_7d29b88dd9a4864d8115a4c16cc59bcd" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">             <h4 style="margin: 0 0 8px 0;">Pete's Coffee</h4>             <img src="https://s3-media0.fl.yelpcdn.com/bphoto/uy7suODg1PbQgyFVl4wYqw/348s.jpg" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;">             <p style="font-size: 12px; margin: 4px 0;"><strong>Type:</strong> Cafe</p>             <p style="font-size: 12px; margin: 4px 0;"><strong>Address:</strong> 63 Moraga Way, Orinda, CA 94563</p>             <p style="font-size: 11px; margin: 4px 0;">A well-known coffee chain offering specialty coffee, tea, and pastries, commonly used as a local study or meeting spot.</p>         </div>         </div>`)[0];
+                popup_dd92e5f29b4946cc7a427ed1b237138a.setContent(html_7d29b88dd9a4864d8115a4c16cc59bcd);
+            
+        
+
+        marker_b5a4474e886605c7ca6080a2efb9deb8.bindPopup(popup_dd92e5f29b4946cc7a427ed1b237138a)
+        ;
+
+        
+    
+    
+            marker_b5a4474e886605c7ca6080a2efb9deb8.bindTooltip(
+                `<div>
+                     Pete's Coffee
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5d72f512ed55c9f12a39266cce05e2c6 = L.marker(
+                [37.878505, -122.182275],
+                {}
+            ).addTo(map_76d9a53c82651f1604aa6e3c13c801de);
+        
+    
+            var icon_96b2173b218f81eb890b88dd234d0144 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_5d72f512ed55c9f12a39266cce05e2c6.setIcon(icon_96b2173b218f81eb890b88dd234d0144);
+        
+    
+        var popup_c9ffab7f86f61f71e28c38210b3a7f20 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_3ad10d31f82cc5f21912070579a04bb0 = $(`<div id="html_3ad10d31f82cc5f21912070579a04bb0" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">             <h4 style="margin: 0 0 8px 0;">Orinda Theatre</h4>             <img src="https://photos.cinematreasures.org/production/photos/74026/1370149854/large.jpg?1370149854" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;">             <p style="font-size: 12px; margin: 4px 0;"><strong>Type:</strong> Activity</p>             <p style="font-size: 12px; margin: 4px 0;"><strong>Address:</strong> 4 Orinda Theatre Square # 3308, Orinda, CA 94563</p>             <p style="font-size: 11px; margin: 4px 0;">A historic Art Deco movie theater in Orinda Theatre Square that shows new films and hosts community events and film festivals.</p>         </div>         </div>`)[0];
+                popup_c9ffab7f86f61f71e28c38210b3a7f20.setContent(html_3ad10d31f82cc5f21912070579a04bb0);
+            
+        
+
+        marker_5d72f512ed55c9f12a39266cce05e2c6.bindPopup(popup_c9ffab7f86f61f71e28c38210b3a7f20)
+        ;
+
+        
+    
+    
+            marker_5d72f512ed55c9f12a39266cce05e2c6.bindTooltip(
+                `<div>
+                     Orinda Theatre
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_2677bbeeeb15a007114e4370123cd498 = L.marker(
+                [37.878572, -122.180828],
+                {}
+            ).addTo(map_76d9a53c82651f1604aa6e3c13c801de);
+        
+    
+            var icon_0d8ec04fd15ed39e8ddaff968bbff00f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_2677bbeeeb15a007114e4370123cd498.setIcon(icon_0d8ec04fd15ed39e8ddaff968bbff00f);
+        
+    
+        var popup_bcf0e6ddfaded868753693080b5be786 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_aabec875534a3119eb621936ffc0a905 = $(`<div id="html_aabec875534a3119eb621936ffc0a905" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">             <h4 style="margin: 0 0 8px 0;">Nation's Giant Hamburgers</h4>             <img src="https://www.beyondthecreek.com/wp-content/uploads/2022/09/nations-orinda-outside-old.jpg" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;">             <p style="font-size: 12px; margin: 4px 0;"><strong>Type:</strong> Restaurant</p>             <p style="font-size: 12px; margin: 4px 0;"><strong>Address:</strong> 65 Moraga Way, Orinda, CA 94563</p>             <p style="font-size: 11px; margin: 4px 0;">A casual diner famous for large burgers, classic American breakfast foods, and homemade pies.</p>         </div>         </div>`)[0];
+                popup_bcf0e6ddfaded868753693080b5be786.setContent(html_aabec875534a3119eb621936ffc0a905);
+            
+        
+
+        marker_2677bbeeeb15a007114e4370123cd498.bindPopup(popup_bcf0e6ddfaded868753693080b5be786)
+        ;
+
+        
+    
+    
+            marker_2677bbeeeb15a007114e4370123cd498.bindTooltip(
+                `<div>
+                     Nation's Giant Hamburgers
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c5a0539838dc01584778a0624b2af337 = L.marker(
+                [37.878072, -122.180862],
+                {}
+            ).addTo(map_76d9a53c82651f1604aa6e3c13c801de);
+        
+    
+            var icon_e2e88324e6ba44947443a4823ddecfdd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_c5a0539838dc01584778a0624b2af337.setIcon(icon_e2e88324e6ba44947443a4823ddecfdd);
+        
+    
+        var popup_a4ef212099c52425ff23b1f2ce1507ae = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_18a45badecc200f7b1b54c05029d0332 = $(`<div id="html_18a45badecc200f7b1b54c05029d0332" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">             <h4 style="margin: 0 0 8px 0;">Maya Mexican Grill</h4>             <img src="https://s3-media0.fl.yelpcdn.com/bphoto/EHB5h0CASeYmjjaliaBZmQ/348s.jpg" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;">             <p style="font-size: 12px; margin: 4px 0;"><strong>Type:</strong> Restaurant</p>             <p style="font-size: 12px; margin: 4px 0;"><strong>Address:</strong> 74 Moraga Way, Orinda, CA 94563</p>             <p style="font-size: 11px; margin: 4px 0;">A casual Mexican restaurant serving burritos, tacos, and other traditional Mexican dishes.</p>         </div>         </div>`)[0];
+                popup_a4ef212099c52425ff23b1f2ce1507ae.setContent(html_18a45badecc200f7b1b54c05029d0332);
+            
+        
+
+        marker_c5a0539838dc01584778a0624b2af337.bindPopup(popup_a4ef212099c52425ff23b1f2ce1507ae)
+        ;
+
+        
+    
+    
+            marker_c5a0539838dc01584778a0624b2af337.bindTooltip(
+                `<div>
+                     Maya Mexican Grill
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d853f1055d32f4dc5a15063450bf993d = L.marker(
+                [37.87936, -122.18211],
+                {}
+            ).addTo(map_76d9a53c82651f1604aa6e3c13c801de);
+        
+    
+            var icon_f874b19cd1e911e7c82e651e8972b67f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "cutlery", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_d853f1055d32f4dc5a15063450bf993d.setIcon(icon_f874b19cd1e911e7c82e651e8972b67f);
+        
+    
+        var popup_7ff1e2ce7f864728404848f1ef5488b5 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_04b5fca0a9045dfe07246a7609cf740a = $(`<div id="html_04b5fca0a9045dfe07246a7609cf740a" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">             <h4 style="margin: 0 0 8px 0;">Casa Orinda</h4>             <img src="https://s.hdnux.com/photos/01/36/71/30/24876579/3/rawImage.jpg" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;">             <p style="font-size: 12px; margin: 4px 0;"><strong>Type:</strong> Restaurant</p>             <p style="font-size: 12px; margin: 4px 0;"><strong>Address:</strong> 20 Bryant Way, Orinda, CA 94563</p>             <p style="font-size: 11px; margin: 4px 0;">A historic restaurant in Orinda known for its classic American cuisine, steaks, and old-California charm.</p>         </div>         </div>`)[0];
+                popup_7ff1e2ce7f864728404848f1ef5488b5.setContent(html_04b5fca0a9045dfe07246a7609cf740a);
+            
+        
+
+        marker_d853f1055d32f4dc5a15063450bf993d.bindPopup(popup_7ff1e2ce7f864728404848f1ef5488b5)
+        ;
+
+        
+    
+    
+            marker_d853f1055d32f4dc5a15063450bf993d.bindTooltip(
+                `<div>
+                     Casa Orinda
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ca5fd92905892baec31dcc4dee2cf987 = L.marker(
+                [37.925681, -122.162664],
+                {}
+            ).addTo(map_76d9a53c82651f1604aa6e3c13c801de);
+        
+    
+            var icon_e7ac14e20b97399221464e06bcbfb71c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_ca5fd92905892baec31dcc4dee2cf987.setIcon(icon_e7ac14e20b97399221464e06bcbfb71c);
+        
+    
+        var popup_7d108eeb4dfaa3eb0da3cd5fdcc94665 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9a6a3f0f18bd9cef4838d048547011ab = $(`<div id="html_9a6a3f0f18bd9cef4838d048547011ab" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">             <h4 style="margin: 0 0 8px 0;">Briones Regional Park</h4>             <img src="https://liveandlethike.com/wp-content/uploads/2025/07/dsc08064.jpg" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;">             <p style="font-size: 12px; margin: 4px 0;"><strong>Type:</strong> Activity</p>             <p style="font-size: 12px; margin: 4px 0;"><strong>Address:</strong> 1611 Bear Creek Road, Lafayette, CA</p>             <p style="font-size: 11px; margin: 4px 0;">A large East Bay park with hiking trails, open hills, wildlife, and scenic views, popular for outdoor recreation.</p>         </div>         </div>`)[0];
+                popup_7d108eeb4dfaa3eb0da3cd5fdcc94665.setContent(html_9a6a3f0f18bd9cef4838d048547011ab);
+            
+        
+
+        marker_ca5fd92905892baec31dcc4dee2cf987.bindPopup(popup_7d108eeb4dfaa3eb0da3cd5fdcc94665)
+        ;
+
+        
+    
+    
+            marker_ca5fd92905892baec31dcc4dee2cf987.bindTooltip(
+                `<div>
+                     Briones Regional Park
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b980e7d2e72173422f8729f4cd799bcc = L.marker(
+                [37.883022, -122.188002],
+                {}
+            ).addTo(map_76d9a53c82651f1604aa6e3c13c801de);
+        
+    
+            var icon_1494ef11e86c4cb0fc388248f8184854 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_b980e7d2e72173422f8729f4cd799bcc.setIcon(icon_1494ef11e86c4cb0fc388248f8184854);
+        
+    
+        var popup_cce7fd84438110e1e9f15c1179af465f = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6fa0277372388c607c1c16c5c7951f53 = $(`<div id="html_6fa0277372388c607c1c16c5c7951f53" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">             <h4 style="margin: 0 0 8px 0;">Orinda Park</h4>             <img src="https://www.cityoforinda.gov/ImageRepository/Document?documentID=3747" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;">             <p style="font-size: 12px; margin: 4px 0;"><strong>Type:</strong> Activity</p>             <p style="font-size: 12px; margin: 4px 0;"><strong>Address:</strong> 28 Orinda Way, Orinda, CA 94563</p>             <p style="font-size: 11px; margin: 4px 0;">A central community park with green space, playgrounds, picnic areas, and trails used for local events and recreation.</p>         </div>         </div>`)[0];
+                popup_cce7fd84438110e1e9f15c1179af465f.setContent(html_6fa0277372388c607c1c16c5c7951f53);
+            
+        
+
+        marker_b980e7d2e72173422f8729f4cd799bcc.bindPopup(popup_cce7fd84438110e1e9f15c1179af465f)
+        ;
+
+        
+    
+    
+            marker_b980e7d2e72173422f8729f4cd799bcc.bindTooltip(
+                `<div>
+                     Orinda Park
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e6c94c991dacfc121e3a9d770e252f5e = L.marker(
+                [37.883145, -122.187932],
+                {}
+            ).addTo(map_76d9a53c82651f1604aa6e3c13c801de);
+        
+    
+            var icon_cc8f65ef401bf84a15c4c5f556eecc0e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "tree", "iconColor": "white", "markerColor": "green", "prefix": "fa"}
+            );
+            marker_e6c94c991dacfc121e3a9d770e252f5e.setIcon(icon_cc8f65ef401bf84a15c4c5f556eecc0e);
+        
+    
+        var popup_2a3ff3b193828359d3b1642ba70669d7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cd84dd2ad175ede0291f700d064619df = $(`<div id="html_cd84dd2ad175ede0291f700d064619df" style="width: 100.0%; height: 100.0%;">         <div style="width: 250px;">             <h4 style="margin: 0 0 8px 0;">Orinda Library</h4>             <img src="https://images.squarespace-cdn.com/content/v1/5132be4de4b021358bca7fed/fe23eeaa-1f1d-4599-a2c3-21c9e15d257b/Community+center+for+all+donationsjpg.jpg" style="width: 100%; max-height: 150px; object-fit: cover; border-radius: 4px; margin-bottom: 8px;">             <p style="font-size: 12px; margin: 4px 0;"><strong>Type:</strong> Activity</p>             <p style="font-size: 12px; margin: 4px 0;"><strong>Address:</strong> 26 Orinda Way, Orinda, CA 94563</p>             <p style="font-size: 11px; margin: 4px 0;">A community library that offers books, study spaces, public computers, and educational programs for residents of all ages, serving as a quiet place for reading, learning, and community events.</p>         </div>         </div>`)[0];
+                popup_2a3ff3b193828359d3b1642ba70669d7.setContent(html_cd84dd2ad175ede0291f700d064619df);
+            
+        
+
+        marker_e6c94c991dacfc121e3a9d770e252f5e.bindPopup(popup_2a3ff3b193828359d3b1642ba70669d7)
+        ;
+
+        
+    
+    
+            marker_e6c94c991dacfc121e3a9d770e252f5e.bindTooltip(
+                `<div>
+                     Orinda Library
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
